@@ -1,8 +1,8 @@
 <template>
     <main>
-        <div class="container">        
+        <div class="container">  
             <h1>About</h1>
-            <p>This is an About Page.</p>
+            <p>Buy from our wide selection of cars...</p>
         </div>
     </main>
 </template>

@@ -17,7 +17,7 @@
 
       <div class="price-range">
         <label for="price">Maximum Price: $ </label>
-        <input type="number" v-model="price" @change="handleQueryChange"/>
+        <input type="text" v-model="priceCap" @change="handleQueryChange"/>
       </div>
 
       <div class="cards">
@@ -30,8 +30,7 @@
         <div
         v-for="car in cars" 
         class="carsSpan"
-        @click="router.push(`/car/${car.id}`)"
-        >
+        @click="router.push(`/car/${car.id}`)">
           <h2>{{ car.make }} - {{ car.year }}</h2> 
           <p>${{ car.price }}</p>
         </div>
@@ -49,26 +48,26 @@ const cars = ref(carsData);
 const make = ref("");
 const router = useRouter();
 const route = useRoute();
-const price = ref(0);
+const priceCap = ref(0);
 
-// bind query param to 
+// bind query param from fields to url
 onMounted(() => {
   make.value = route.query.make || ""; // need to check empty string (app initialize)
-  price.value = route.query.price;
+  priceCap.value = route.query.priceCap;
 });
 
 // watching 2 params - make and price
-watch([make, price], () => {
-  if (price.value > 0) {
+watch([make, priceCap], () => {
+  if (priceCap.value > 0) {
     if(make.value){
       if(make.value === "All"){
-        cars.value = carsData.filter(c => {
-          return c.price <= price.value
-        }); 
+        cars.value = carsData.filter(c => {return c.price <= priceCap.value}); 
       }
       else{
-         // need return statement for .filter (not entirely sure why)
-        cars.value = carsData.filter(c => {return c.make === make.value && c.price <= price.value});
+        // need return statement for .filter (not entirely sure why)
+        cars.value = carsData.filter(c => {
+          //console.log(c.price, parseInt(price.value));
+          return c.make === make.value && c.price <= priceCap.value});
       }
     }
   }
@@ -87,7 +86,7 @@ const handleQueryChange = () => {
     {
       query: {
         make: make.value,
-        maxPrice: price.value,
+        priceCap: priceCap.value,
       }
     }
   );

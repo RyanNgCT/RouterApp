@@ -2,7 +2,7 @@
 
 Project to learn Vue Routing based on [this Youtube Tutorial Video](https://www.youtube.com/watch?v=PBqQO-keR1s)
 
-## Steps to add routing to application
+### Steps to add routing to application
 1. Define the Routing Rules (in `/router/index.js`)
 2. Tell Vue about our Routing Rules
 3. Define where to render the page components
@@ -22,20 +22,20 @@ Project to learn Vue Routing based on [this Youtube Tutorial Video](https://www.
 
 ### Bug List
 1. Open an issue or PR.
-2. To fix:
-- [ ] URL not syncing with textbox for `maxPrice`.
+2. To do:
+- [x] URL not syncing with textbox for `maxPrice` (done).
+- [ ] Style webpage (?)
 
 ### Project setup
-```
+```bash
 npm i
 ```
 
-### Compiles and hot-reloads for development
-```
+### Compile
+```bash
+# dev
 npm run serve
-```
 
-### Compiles and minifies for production
-```
+# prod
 npm run build
 ```

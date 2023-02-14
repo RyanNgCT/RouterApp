@@ -8,7 +8,7 @@
 
             <!-- dealer and manufacturer details -->
             <RouterView/>
-            <button @click="router.back()">Go Back</button>
+            <button class="btn" @click="router.back()">Go Back</button>
         </div>
         <div v-else class="error">
             <h2>Car Not Found.</h2>
