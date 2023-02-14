@@ -23,7 +23,7 @@ Project to learn Vue Routing based on [this Youtube Tutorial Video](https://www.
 ### Bug List
 1. Open an issue or PR.
 2. To do:
-- [x] URL not syncing with textbox for `maxPrice` (done).
+- [x] URL not syncing with textbox for `priceCap` (done).
 - [ ] Style webpage (?)
 
 ### Project setup
